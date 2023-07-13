@@ -16,6 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
+//this is a pojo class
 public class Car {
     
     @Id
