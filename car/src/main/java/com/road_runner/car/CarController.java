@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +23,14 @@ public class CarController {
         return cRepo.findAll();
     }
 
+    @GetMapping(value = "/get/{id}")
+    public Car getCarbyId(@PathVariable Long id){
+        return cRepo.findById(id).orElse(null);
+    }
+
+
     @PostMapping(value = "/post")
-    public void postBooking(@RequestBody Car car){
+    public void postCar(@RequestBody Car car){
         cRepo.save(car);
     }
     

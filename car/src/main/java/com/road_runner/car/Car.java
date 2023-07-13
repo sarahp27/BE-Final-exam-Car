@@ -31,5 +31,7 @@ public class Car {
     @Column(columnDefinition = "TEXT")
     public String longDesc;
     public int price;
+    public static void add(Car car2) {
+    }
 
 }
